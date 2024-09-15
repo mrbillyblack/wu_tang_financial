@@ -1,0 +1,26 @@
+{% extends "header.html" %}
+{% block title %}Wu-Tang Financial{% endblock %}
+
+{% block content %}
+	<div class="container py-2 rounded-3" style="background-color:#333333; height:50vh " >
+		<h3>Investors</h3>
+		<table class="table-light table-striped" border="1" style="width:100%; color:#B3B3B3">
+			<thead>
+				<tr style="background-color: #B3B3B3; color:black">
+					{% for column in columns %}
+					    <th>{{ column }}</th>
+					{% endfor %}
+				</tr>
+			</thead>
+			<tbody>
+			    {% for row in rows %}
+				    <tr class="highlight-text">
+				    	{% for column in range(columns|length) %}
+				            <td>{{ row[column] }} </td>
+				    	{% endfor %}
+				    </tr>
+			    {% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

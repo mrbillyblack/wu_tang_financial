@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html land="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"bcontent="width=device-width, initial-scale=1"/>
+    <title>Wu-Tang Financial</title>
+</head>
+<body>
+	<div>
+		<div>
+			<table border="1" style="width:100%">
+				<thead>
+					<tr>
+						{% for column in columns %}
+						    <th>{{ column }}</th>
+						{% endfor %}
+					</tr>
+				</thead>
+				<tbody>
+				    {% for row in rows %}
+					    <tr>
+					    	{% for column in range(columns|length) %}
+					            <td>{{ row[column] }} </td>
+					    	{% endfor %}
+					    </tr>
+				    {% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>

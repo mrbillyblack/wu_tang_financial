@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+  <html lang="en">
+    <head>
+    	<title>{% block title %}{% endblock %}</title>
+    	<meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}" type="text/css"/>
+      <script type="text/javascript" src="{{ url_for('static', filename='bootstrap.bundle.js') }}"></script>
+      <style>
+        body {
+          background-image: url("{{ url_for('static', filename='overhead-city.jpg') }}");
+          background-size: cover;
+          color: #E2A42B;
+        }
+        .highlight-text {
+            transition: color 0.5s ease;
+
+        }
+        .highlight-text:hover {
+          background-color: #E2A42B;
+          color: black;
+        }
+      </style>
+    </head>
+    <body class="body">
+       <header>
+          <!-- navbar -->
+          <nav class="navbar navbar-expand-md">
+            <div class="container flex-column align-items-center">
+              <a href="{{ url_for('index') }}" class="navbar-brand d-flex align-items-center">
+                  <img src="{{ url_for('static', filename='wu-tang-logo.png') }}" alt="Wu-Tang Financial">
+              </a>
+              <br><b>Wu-Tang Financial</b>
+              <br>"Diversify your bonds."
+            </div>
+          </nav>            
+        </header>
+        <div class="p-2" style="min-height: 80%; background-color:transparent;">  
+          {% block content %}
+          {% endblock %}
+        </div>
+        <div class="align-text-center" style="bottom:0;color:white; position: absolute">&copy Copyright 2024 Billy McGuire.</div>
+        
+    </body>
+  </html>
